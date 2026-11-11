@@ -1,5 +1,7 @@
 from pico2d import *
 
+import game_framework
+
 
 # bird flight speed
 PIXEL_PER_METER = 10.0 / 0.3
