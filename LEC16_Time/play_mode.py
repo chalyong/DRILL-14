@@ -2,6 +2,7 @@ from pico2d import *
 import game_world
 import game_framework
 from boy import Boy
+from bird import Bird
 from grass import Grass
 
 boy = None
@@ -26,6 +27,9 @@ def init():
 
     boy = Boy()
     game_world.add_oject(boy)
+
+    bird = Bird(100, 400)
+    game_world.add_oject(bird)
 
     grass = Grass()
     game_world.add_oject(grass, 0)
@@ -52,7 +56,6 @@ def render():
     clear_canvas()
     game_world.render()
     update_canvas()
-
 
 
 
