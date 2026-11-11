@@ -15,4 +15,12 @@ FLY_FRAME_PER_SECOND = (
 
 
 class Bird:
-    pass
+    FRAME_WIDTH = 183
+    FRAME_HEIGHT = 168
+    FRAMES_PER_ROW = 5
+
+    def __init__(self, x, y):
+        self.image = load_image('bird_animation.png')
+        self.x, self.y = x, y
+        self.frame = 0.0
+        self.dir = 1
