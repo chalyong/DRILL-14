@@ -33,6 +33,14 @@ class Bird:
         ) % WINGBEAT_FRAMES
         self.x += self.dir * FLY_SPEED_PPS * game_framework.frame_time
 
+        margin = self.FRAME_WIDTH / 2
+        if self.x >= get_canvas_width() - margin:
+            self.x = get_canvas_width() - margin
+            self.dir = -1
+        elif self.x <= margin:
+            self.x = margin
+            self.dir = 1
+
     def draw(self):
         frame = int(self.frame)
         row, column = divmod(frame, self.FRAMES_PER_ROW)
