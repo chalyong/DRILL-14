@@ -6,6 +6,11 @@ from bird import Bird
 from grass import Grass
 
 boy = None
+BIRD_COUNT = 10
+BIRD_START_X = 100
+BIRD_X_SPACING = 150
+BIRD_START_Y = 300
+BIRD_Y_VARIATION = 55
 
 
 def handle_events():
@@ -28,8 +33,11 @@ def init():
     boy = Boy()
     game_world.add_oject(boy)
 
-    for index in range(10):
-        bird = Bird(100 + index * 150, 300 + (index % 4) * 55)
+    for index in range(BIRD_COUNT):
+        bird = Bird(
+            BIRD_START_X + index * BIRD_X_SPACING,
+            BIRD_START_Y + (index % 4) * BIRD_Y_VARIATION,
+        )
         game_world.add_oject(bird)
 
     grass = Grass()
@@ -57,7 +65,6 @@ def render():
     clear_canvas()
     game_world.render()
     update_canvas()
-
 
 
 
